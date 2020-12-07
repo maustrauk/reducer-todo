@@ -1,4 +1,4 @@
-import {ADD_TODO, TOGGLE_TODO} from './../actions/reducerActions';
+import {ADD_TODO, TOGGLE_TODO, CLEAR_COMPLETED} from './../actions/reducerActions';
 
 export const initState = [{
   task: 'Learn about reducers',
@@ -11,6 +11,8 @@ const reducer = (state, action) => {
       case(ADD_TODO):
         return([...state, action.payload]);
       case(TOGGLE_TODO):
+        return(action.payload);
+      case(CLEAR_COMPLETED):
         return(action.payload);
       default:
         return state;

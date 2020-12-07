@@ -1,5 +1,6 @@
 export const ADD_TODO = "ADD_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
+export const CLEAR_COMPLETED = "CLEAR_COMPLETED";
 
 export const addTodo = (task) => {
     return ({
@@ -9,7 +10,7 @@ export const addTodo = (task) => {
             id: Date.now(),
             completed: false
         }
-    })
+    });
 }
 
 export const toggleTodo = (itemId, state) => {
@@ -25,5 +26,12 @@ export const toggleTodo = (itemId, state) => {
                 return (item);
             }
          })
-    })
+    });
+}
+
+export const clearCompleted = (state) => {
+    return ({
+        type: CLEAR_COMPLETED,
+        payload: state.filter(item => !item.completed)
+    });
 }
