@@ -1,4 +1,4 @@
-import {} from './../actions/reducerActions';
+import {ADD_TODO} from './../actions/reducerActions';
 
 export const initState = [{
   task: 'Learn about reducers',
@@ -8,10 +8,10 @@ export const initState = [{
 
 const reducer = (state, action) => {
     switch (action.type) {
-      
-
+      case(ADD_TODO):
+        return([...state, action.payload]);
       default:
-        return state
+        return state;
     }
   }
 
