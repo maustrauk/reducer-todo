@@ -3,7 +3,7 @@ import './App.css';
 import React, {useReducer} from "react";
 
 import reducer, {initState} from './reducers/reducer';
-import {addTodo} from './actions/reducerActions';
+import {addTodo, toggleTodo} from './actions/reducerActions';
 
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
@@ -18,10 +18,14 @@ function App() {
     dispatch(addTodo(task));
   }
 
+  const handleToggle = itemId => {
+    dispatch(toggleTodo(itemId, state));
+  }
+
   return (
-    <div className="App">
+    <div className="App-container">
       <h2>All Tasks</h2>
-      <TodoList todo={state}/>
+      <TodoList todo={state} handleToggle={handleToggle}/>
       <TodoForm handleAdd={handleAdd} />
     </div>
   );
