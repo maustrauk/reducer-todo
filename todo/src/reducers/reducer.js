@@ -3,7 +3,8 @@ import {ADD_TODO, TOGGLE_TODO, CLEAR_COMPLETED} from './../actions/reducerAction
 export const initState = [{
   task: 'Learn about reducers',
   completed: false,
-  id: 3892987589
+  id: 3892987589,
+  done_at: {}
 }]
 
 const reducer = (state, action) => {

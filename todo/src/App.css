@@ -30,10 +30,12 @@ h2 {
 }
 
 .item.completed {
-  text-decoration: line-through;
+  display: flex;
+  flex-direction: column;
   background-color: #264653;
   border: 1px#264653 solid;
   border-radius: 50%;
+  text-align: center;
 }
 
 .form-container {
@@ -48,4 +50,10 @@ h2 {
 
 .form-container .add-btn {
   margin: 0.5em;
+}
+
+
+.item.completed .comleted-time {
+  color: red;
+  font-size: 0.7em;
 }

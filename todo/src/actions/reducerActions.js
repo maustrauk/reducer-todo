@@ -8,7 +8,8 @@ export const addTodo = (task) => {
         payload: {
             task: task,
             id: Date.now(),
-            completed: false
+            completed: false,
+            done_at: {}
         }
     });
 }
@@ -20,7 +21,8 @@ export const toggleTodo = (itemId, state) => {
             if (itemId === item.id) {
                 return ({
                     ...item,
-                    completed: !item.completed
+                    completed: !item.completed,
+                    done_at: Date.now()
                 });
             } else {
                 return (item);
