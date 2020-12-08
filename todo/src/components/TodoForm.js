@@ -24,7 +24,7 @@ class TodoForm extends React.Component {
     this.props.handleAdd(this.state);
     this.setState({
       textInput:"",
-      dateInput: ""
+      dateInput: moment().format("YYYY-MM-DD")
     });
   }
 
