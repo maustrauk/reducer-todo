@@ -52,10 +52,19 @@ h2 {
   margin: 0.5em;
 }
 
+.item.completed {
+  color: rgb(3, 189, 3);
+}
+
 .item.completed .comleted-time {
   margin-top: -1.5em;
-  color: red;
+  color: gold;
   font-size: 0.7em;
+}
+
+.over-due {
+  text-transform: uppercase;
+  color: red;
 }
 
 .over-due.completed {
