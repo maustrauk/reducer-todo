@@ -2,14 +2,15 @@ export const ADD_TODO = "ADD_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const CLEAR_COMPLETED = "CLEAR_COMPLETED";
 
-export const addTodo = (task) => {
+export const addTodo = (taskObj) => {
     return ({
         type: ADD_TODO,
         payload: {
-            task: task,
+            task: taskObj.textInput,
             id: Date.now(),
             completed: false,
-            done_at: {}
+            done_at: 0,
+            complete_by: taskObj.dateInput
         }
     });
 }

@@ -52,8 +52,12 @@ h2 {
   margin: 0.5em;
 }
 
-
 .item.completed .comleted-time {
+  margin-top: -1.5em;
   color: red;
   font-size: 0.7em;
+}
+
+.over-due.completed {
+  display: none;
 }

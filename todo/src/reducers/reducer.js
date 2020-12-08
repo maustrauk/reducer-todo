@@ -1,10 +1,12 @@
 import {ADD_TODO, TOGGLE_TODO, CLEAR_COMPLETED} from './../actions/reducerActions';
+import moment from 'moment';
 
 export const initState = [{
   task: 'Learn about reducers',
   completed: false,
   id: 3892987589,
-  done_at: {}
+  done_at: 0,
+  complete_by: moment().add(1, 'days').format("YYYY-MM-DD")
 }]
 
 const reducer = (state, action) => {

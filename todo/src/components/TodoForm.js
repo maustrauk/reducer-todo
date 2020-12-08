@@ -1,24 +1,30 @@
 import React from "react";
+import moment from 'moment';
 
 class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      textInput:"" 
+      textInput: "",
+      dateInput: moment().format("YYYY-MM-DD")
     }
   }
 
   handleChanges = e => {
+
+    const {name, value} = e.target;
+
     this.setState({
-      textInput:e.target.value
+      [name]: value
     });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.handleAdd(this.state.textInput);
+    this.props.handleAdd(this.state);
     this.setState({
-      textInput:""
+      textInput:"",
+      dateInput: ""
     });
   }
 
@@ -32,7 +38,14 @@ class TodoForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} className="form-container">
         <button onClick={this.handleCompleted} className="clear-btn">Clear Completed</button>
-        <input value={this.state.textInput} onChange={this.handleChanges} type="text" name="item" />
+        <label>
+          Task:
+          <input value={this.state.textInput} onChange={this.handleChanges} type="text" name="textInput" />
+        </label>
+        <label>
+          Due to:
+          <input value={this.state.dateInput} onChange={this.handleChanges} type="date" name="dateInput" min={this.state.dateInput}/>
+        </label>
         <button className="add-btn">Add Todo</button>
       </form>
     );
